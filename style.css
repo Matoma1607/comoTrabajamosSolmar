@@ -2,12 +2,12 @@
 
 :root {
     --primary-color: #839996;
-    --primary-dark: #6b8084;
-    --primary-light: #a4b8bb;
+    --primary-dark: #839996;
+    --primary-light: #839996;
     --secondary-color: #2c3e50;
     --accent-color: #f8f9fa;
     --text-dark: #2c3e50;
-    --text-light: #6c757d;
+    --text-light: #839996;
 }
 
 * {
@@ -37,62 +37,27 @@ html {
     padding: 0.8rem 0;
 }
 
+/* Navbar brand - Solo para el logo */
 .navbar-brand {
     display: flex;
     align-items: center;
-    gap: 15px;
-    color: white !important;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    padding: 0;
+    padding: 0.5rem 0;
 }
+
 .navbar-brand:hover {
-    transform: scale(1.05);
-    color: white !important;
+    text-decoration: none;
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
+/* Logo Image - Estilos simples */
 .logo-image {
-    height: 45px;
+    height: 60px;
     width: auto;
-    transition: all 0.3s ease;
-    filter: brightness(0) invert(1); /* Makes logo white */
+    max-width: 190px;
+    border-radius: 15px;
+    padding: 5px;
 }
 
-.brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-}
-
-.brand-name {
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin: 0;
-}
-
-.brand-subtitle {
-    font-size: 0.75rem;
-    opacity: 0.9;
-    font-weight: 400;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 0;
-}
-
-.logo-svg {
-    width: 45px;
-    height: 45px;
-    fill: white;
-    transition: all 0.3s ease;
-}
-
+/* Navigation Links */
 .nav-link {
     color: rgba(255, 255, 255, 0.9) !important;
     font-weight: 500;
@@ -114,6 +79,7 @@ html {
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
+
 .nav-link:hover {
     color: white !important;
     background: rgba(255, 255, 255, 0.1);
@@ -129,6 +95,7 @@ html {
     color: white !important;
 }
 
+/* Navbar Toggler */
 .navbar-toggler {
     border: 2px solid rgba(255, 255, 255, 0.3);
     padding: 0.5rem;
@@ -145,61 +112,18 @@ html {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+/* Navbar Scrolled */
 .navbar-scrolled {
     background: linear-gradient(135deg, rgba(131, 153, 150, 0.95), rgba(107, 128, 132, 0.95)) !important;
     box-shadow: 0 2px 20px rgba(131, 153, 150, 0.3) !important;
     padding: 0.5rem 0 !important;
 }
 
-.navbar-scrolled .logo-image,
-.navbar-scrolled .logo-svg {
-    height: 35px;
+.navbar-scrolled .logo-image {
+    height: 50px;
+    max-width: 120px;
 }
 
-@keyframes logoFloat {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-3px);
-    }
-}
-
-.navbar-brand:hover .logo-image,
-.navbar-brand:hover .logo-svg {
-    animation: logoFloat 0.6s ease-in-out;
-}
-
-@media (max-width: 768px) {
-    .brand-text {
-        display: none;
-    }
-    
-    .logo-image,
-    .logo-svg {
-        height: 35px;
-        width: 35px;
-    }
-    
-    .navbar-brand {
-        gap: 8px;
-    }
-}
-
-@media (max-width: 576px) {
-    .navbar-brand {
-        font-size: 1.2rem;
-    }
-    
-    .brand-name {
-        font-size: 1.2rem;
-    }
-    
-    .nav-link {
-        margin: 0 5px;
-        padding: 0.4rem 0.8rem !important;
-    }
-}
 /* Hero Section */
 .hero-section {
     height: 100vh;
@@ -210,7 +134,7 @@ html {
     overflow: hidden;
     background: url('./img/solmarFrente.jpeg') center top no-repeat;
     background-size: cover;
-    background-position-y: 25px; /* 🔽 Bajar la imagen */
+    background-position-y: 25px;
 }
 
 .hero-section::before {
@@ -232,7 +156,6 @@ html {
     color: rgb(41, 40, 40);
 }
 
-
 .hero-section h1 {
     font-size: 3.5rem;
     font-weight: 800;
@@ -244,14 +167,13 @@ html {
     font-size: 1.4rem;
     font-weight: 500;
     color: #ffffff;
-    background: rgba(0, 0, 0, 0.4); /* Fondo suave para resaltar */
+    background: rgba(0, 0, 0, 0.4);
     padding: 15px 25px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     display: inline-block;
     margin-bottom: 2rem;
 }
-
 
 /* Button Styles */
 .btn-custom {
@@ -466,36 +388,14 @@ html {
     opacity: 0.9;
 }
 
-/* Contact Form */
-.contact-form {
-    background: white;
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form .form-control {
-    border: 2px solid rgba(131, 153, 150, 0.2);
-    border-radius: 10px;
-    padding: 12px 15px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.contact-form .form-control:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(131, 153, 150, 0.25);
-}
-
 /* Footer */
 .footer {
-    background-color: #6e817e; /* 🎨 Color igual al del footer de la imagen */
+    background-color: #6e817e;
     color: #eaeaea;
     font-size: 0.95rem;
     padding: 2.5rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 
 .footer .footer-brand {
     font-size: 1.2rem;
@@ -529,7 +429,6 @@ html {
     transform: scale(1.2);
 }
 
-
 .social-links {
     display: flex;
     justify-content: flex-end;
@@ -557,6 +456,16 @@ html {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .logo-image {
+        height: 55px;
+        max-width: 130px;
+    }
+    
+    .navbar-scrolled .logo-image {
+        height: 45px;
+        max-width: 100px;
+    }
+    
     .hero-section h1 {
         font-size: 2.5rem;
     }
@@ -567,10 +476,6 @@ html {
     
     .section-title {
         font-size: 2rem;
-    }
-    
-    .contact-form {
-        padding: 2rem;
     }
     
     .social-links {
@@ -587,9 +492,24 @@ html {
         margin-right: 0;
         margin-bottom: 1rem;
     }
+    
+    .nav-link {
+        margin: 0 5px;
+        padding: 0.4rem 0.8rem !important;
+    }
 }
 
 @media (max-width: 576px) {
+    .logo-image {
+        height: 50px;
+        max-width: 110px;
+    }
+    
+    .navbar-scrolled .logo-image {
+        height: 40px;
+        max-width: 90px;
+    }
+    
     .hero-section {
         height: 80vh;
     }
@@ -598,31 +518,13 @@ html {
         font-size: 2rem;
     }
     
-    .process-card,
-    .contact-form {
+    .process-card {
         padding: 1.5rem;
     }
     
     .stat-number {
         font-size: 2.5rem;
     }
-}
-
-/* Loading Animation */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.loading {
-    animation: pulse 2s infinite;
 }
 
 /* Scroll animations */
@@ -654,4 +556,3 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-dark);
 }
-
